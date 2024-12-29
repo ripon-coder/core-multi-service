@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title')->nullable();
             $table->string('image')->nullable();
             $table->text('description')->nullable();
+            $table->text('second_description')->nullable();
             $table->string('button_url')->nullable();
             $table->enum('status',['published','unpublised'])->default("published");
             $table->timestamps();

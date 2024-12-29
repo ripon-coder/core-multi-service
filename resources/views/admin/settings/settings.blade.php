@@ -86,23 +86,25 @@
                                             <input type="text" class="form-control" name="youtube" value="{{$setting->youtube}}">
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <label class="col-md-3 label-control">Get In Touch</label>
-                                        <div class="col-md-9 mx-auto">
-                                            <textarea class="form-control" name="get_in_touch">{{ $setting->get_in_touch }}</textarea>
-                                        </div>
-                                    </div>
+
 
                                     <div class="form-group row">
                                         <label class="col-md-3 label-control">About Us</label>
                                         <div class="col-md-9 mx-auto">
-                                            <textarea class="form-control" name="about_us">{{ $setting->about_us }}</textarea>
+                                            <textarea rows="5" class="form-control" name="about_us">{{ $setting->about_us }}</textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-md-3 label-control">Office Hour</label>
+                                        <div class="col-md-9 mx-auto">
+                                            <textarea rows="5" class="form-control" name="office_hour">{{ $setting->office_hour }}</textarea>
                                         </div>
                                     </div>
 
                                     <div class="border pt-2 pr-1">
                                         <div class="mb-2">
-                                            <h4 class="text-center">Address 1</h4>
+                                            <h4 class="text-center">Address</h4>
                                         </div>
 
                                         <div class="form-group row">
@@ -113,9 +115,16 @@
                                         </div>
 
                                         <div class="form-group row">
-                                            <label class="col-md-3 label-control">Mobile</label>
+                                            <label class="col-md-3 label-control">Cell Number</label>
                                             <div class="col-md-9 mx-auto">
-                                                <input type="text" class="form-control" name="address_one_mobile" value="{{$setting->address_one_mobile}}">
+                                                <input type="text" class="form-control" name="address_one_mobile_1" value="{{$setting->address_one_mobile_1}}">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-md-3 label-control">Telephone Number</label>
+                                            <div class="col-md-9 mx-auto">
+                                                <input type="text" class="form-control" name="address_one_mobile_2" value="{{$setting->address_one_mobile_2}}">
                                             </div>
                                         </div>
 
@@ -129,11 +138,11 @@
                                         <div class="form-group row">
                                             <label class="col-md-3 label-control">Address</label>
                                             <div class="col-md-9 mx-auto">
-                                                <textarea class="form-control" name="address_one_address">{{$setting->address_one_address}}</textarea>
+                                                <textarea rows="2" class="form-control" name="address_one_address">{{$setting->address_one_address}}</textarea>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="border pt-2 pr-1 mt-1">
+                                    {{-- <div class="border pt-2 pr-1 mt-1">
                                         <div class="mb-2">
                                             <h4 class="text-center">Address 2</h4>
                                         </div>
@@ -166,7 +175,7 @@
                                             </div>
                                         </div>
 
-                                    </div>
+                                    </div> --}}
                                 </div>
 
                                 <div class="form-actions">

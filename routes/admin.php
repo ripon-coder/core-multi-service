@@ -29,8 +29,8 @@ Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function () 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::controller(AdminProfileController::class)->group(function () {
-        Route::get('/profile', 'profile')->name('profile');
-        Route::post('/profile/update', 'updateProfile')->name('profile.update');
+        Route::get('/profile-update', 'profile')->name('profile');
+        Route::post('/profile/profile-update', 'updateProfile')->name('profile.update');
         Route::get('/profile/change-password', 'changePasswordPage')->name('changePasswordPage');
         Route::post('/profile/change-password', 'changePassword')->name('changePassword');
     });

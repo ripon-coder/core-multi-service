@@ -29,16 +29,7 @@ class HomeController extends Controller
 {
 	public function index()
 	{
-		$data['posts'] = Post::withCount('comment')->latest()->limit(10)->get();
-		$data['sliders'] = Slider::whereStatus('published')->get();
-		$data['brands'] = Brand::whereStatus('published')->get();
-		$data['events'] = Event::whereStatus('published')->orderBy("id","desc")->limit(6)->get();
-		$data['learnings'] = Learning::latest()->take(6)->get();
-		$data['upcoming_events'] = Event::whereStatus('published')->where("upcoming", true)->orderBy("id", "desc")->get();
-		$data['fund_raises'] = FoundRaise::whereStatus('published')->withSum('donation', 'raise')->withCount('donation')->orderBy('id', 'DESC')->limit(4)->get();
-        $data['latest_found'] = FoundRaise::whereStatus('published')->withSum('donation', 'raise')->withCount('donation')->latest()->first();
-        //dd($data['latest_found']->toArray());
-		return view('pages.index', $data);
+		return view('front.home');
 	}
 	public function newsEvents()
 	{

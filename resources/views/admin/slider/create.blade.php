@@ -56,6 +56,12 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
+                                        <label class="col-md-3 label-control">Second Description</label>
+                                        <div class="col-md-9 mx-auto">
+                                            <textarea class="form-control" name="second_description">{{ old('second_description') }}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
                                         <label class="col-md-3 label-control">Button URL</label>
                                         <div class="col-md-9 mx-auto">
                                             <input type="url" value="{{ old('button_url') }}" class="form-control"

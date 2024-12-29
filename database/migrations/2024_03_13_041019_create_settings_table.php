@@ -23,12 +23,14 @@ return new class extends Migration
             $table->string('youtube')->nullable();
 
             $table->string('address_one_title')->nullable();
-            $table->string('address_one_mobile')->nullable();
+            $table->string('address_one_mobile_1')->nullable();
+            $table->string('address_one_mobile_2')->nullable();
             $table->string('address_one_email')->nullable();
             $table->string('address_one_address')->nullable();
 
             $table->string('address_two_title')->nullable();
-            $table->string('address_two_mobile')->nullable();
+            $table->string('address_two_mobile_1')->nullable();
+            $table->string('address_two_mobile_2')->nullable();
             $table->string('address_two_email')->nullable();
             $table->string('address_two_address')->nullable();
             $table->timestamps();

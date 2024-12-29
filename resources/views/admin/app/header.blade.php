@@ -11,8 +11,8 @@
                                 src="{{ asset('dynamic-assets/logo/' . $g_setting->logo) }}"
                                 alt="Branding logo">
                         @else
-                            <p class="m-0" style="font-size: 35px;
-                        font-weight: bold;">US Bangla
+                            <p class="m-0 pt-1" style="font-size: 23px;
+                        font-weight: bold;">Core Multi Service
                             </p>
                         @endif
 

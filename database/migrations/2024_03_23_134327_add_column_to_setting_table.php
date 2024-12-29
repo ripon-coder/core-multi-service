@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('settings', function (Blueprint $table) {
-            $table->text('get_in_touch')->nullable();
+            $table->text('office_hour')->nullable();
             $table->text('about_us')->nullable();
         });
     }
