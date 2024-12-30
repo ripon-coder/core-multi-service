@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Core Multiservice Inc.</title>
+<title>@yield('title', 'Core Multiservice Inc.')</title>
 <link rel="icon" href="" type="image/png" sizes="32x32">
 <meta charset="UTF-8">
 <meta name="Theme Design" content="Theme Design">
@@ -49,24 +49,24 @@
             <a href="javascript:void(0)" class="left-box-item">
             Individual & Business Solutions
             </a>
-            <a href="tel:(646) 775-7008" class="left-box-item phone-no">
+            <a href="tel:{{@$g_settings->address_one_mobile_1}}" class="left-box-item phone-no">
             <span class="icon"><i class="fas fa-phone-alt"></i></span>
-            (646) 775-7008
+               {{@$g_settings->address_one_mobile_1}}
             </a>
-            <a href="mailto:info@coremultiserviceus.com" class="left-box-item email-no">
+            <a href="mailto:{{@$g_settings->email}}" class="left-box-item email-no">
             <span class="icon"><i class="fas fa-envelope"></i></span>
-            info@coremultiserviceus.com
+            {{@$g_settings->email}}
             </a>
          </div>
          <div class="right-box">
             <ul class="right-box-item-wrapper">
                <li class="item">
-                  <a target="_blank" class="item-link facebook" href="https://www.facebook.com/CoreCreditRepair">
+                  <a target="_blank" class="item-link facebook" href="{{@$g_settings->facebook}}">
                   <i class="fab fa-facebook-f"></i>
                   </a>
                </li>
                <li class="item">
-                  <a class="item-link whatsapp" href="">
+                  <a class="item-link whatsapp" href="{{@$g_settings->whatsapp}}">
                   <i class="fab fa-whatsapp"></i>
                   </a>
                </li>
@@ -83,7 +83,7 @@
       <!-- Navbar Main Section -->
       <nav class="navbar-main">
          <div class="logo-section">
-            <a class="brand-logo" href="/">
+            <a class="brand-logo" href="{{route('index')}}">
             <img class="initial-logo" src="{{asset('assets/logo/logo-01.png')}}">
             <img class="fixed-header-logo" src="{{asset('assets/logo/logo-02.png')}}">
             </a>
@@ -108,7 +108,7 @@
                   <a class="nav-item-link" href="review.php">Review</a>
                </li>
                <li class="nav-item-main">
-                  <a class="nav-item-link" href="contact.php">Contact</a>
+                  <a class="nav-item-link" href="{{route('contact')}}">Contact</a>
                </li>
             </ul>
          </div>

@@ -1,6 +1,6 @@
 
 @include('front.inc.header')
-@yield('container')
+@yield('content')
 @include('front.inc.footer')
 
 

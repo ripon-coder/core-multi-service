@@ -29,6 +29,7 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Name</th>
+                                    <th scope="col">Phone</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Subject</th>
                                     <th scope="col">Message</th>
@@ -38,9 +39,10 @@
                                 @foreach ($contacts as $item)
                                     <tr>
                                         <th scope="row">{{ $item->id }}</th>
-                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->first_name.' '.$item->last_name }}</td>
+                                        <td>{{ $item->phone }}</td>
                                         <td>{{ $item->email }}</td>
-                                        <td>{{ $item->message }}</td>
+                                        <td>{{ $item->subject }}</td>
                                         <td>{{ $item->body }}</td>
                                     </tr>
                                 @endforeach

@@ -79,7 +79,7 @@ class HomeController extends Controller
 	{
 		$data['page_name'] = "Contact Us";
         $data['c_setting'] = Setting::first();
-		return view('pages.contact', $data);
+		return view('front.pages.contact', $data);
 	}
 	public function photoGallery()
 	{

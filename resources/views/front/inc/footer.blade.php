@@ -16,17 +16,21 @@
                    </div>
                    <ul class="footer-nav-item-inner">
                       <li class="footer-nav-item">
-                         <span class="icon"><i class="fas fa-phone"></i></span>
-                         <a class="link" href="tel:(646) 775-7008">(646) 775-7008</a>
+                         <span class="icon"><i class="fas fa-mobile"></i></span>
+                         <a class="link" href="tel:{{@$g_settings->address_one_mobile_1}}">{{@$g_settings->address_one_mobile_1}}</a>
                       </li>
                       <li class="footer-nav-item">
+                        <span class="icon"><i class="fas fa-phone"></i></span>
+                        <a class="link" href="tel:{{@$g_settings->address_one_mobile_2}}"> {{@$g_settings->address_one_mobile_2}}</a>
+                     </li>
+                      <li class="footer-nav-item">
                          <span class="icon"><i class="far fa-envelope"></i></span>
-                         <a class="link" href="mailto:info@coremultiserviceus.com">info@coremultiserviceus.com</a>
+                         <a class="link" href="mailto:{{@$g_settings->email}}">{{@$g_settings->email}}</a>
                       </li>
                       <li class="footer-nav-item address">
                          <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
                          <h3 class="title">
-                           37-42, Suite# D, 72nd Street, <br>Jackson Heights, NY 11372
+                           {{@$g_settings->address_one_address}}
                          </h3>
                       </li>
                    </ul>
@@ -87,34 +91,32 @@
                       <h2 class="title">About us</h2>
                    </div>
                    <div class="footer-about-us">
-                      <!-- Core Multi Services Inc. is a leading provider of Mortgage, Financial and Auto credit repair services in the entire nation.  -->
-                      Core Multi Services Inc. is a leading provider of Individual, Business, Mortgage, Financial and Auto credit repair services.
+                     {{@$g_settings->about_us}}
                    </div>
                    <ul class="footer-nav-social-item-inner">
                       <li class="footer-nav-item">
-                         <a class="social-link facebook" target="_blank" href="https://www.facebook.com/CoreCreditRepair">
+                         <a class="social-link facebook" target="_blank" href="{{@$g_settings->facebook}}">
                          <i class="fab fa-facebook-f"></i>
                          </a>
                       </li>
                      
                       <li class="footer-nav-item">
-                         <a class="social-link instragram" target="_blank" href="https://www.instagram.com/kashem.core_credit/">
+                         <a class="social-link instragram" target="_blank" href="{{@$g_settings->instragram}}">
                          <i class="fab fa-instagram"></i>
                          </a>
                       </li>
                        <li class="footer-nav-item">
-                         <a class="social-link whatsapp" target="_blank" href="">
+                         <a class="social-link whatsapp" target="_blank" href="{{@$g_settings->whatsapp}}">
                          <i class="fab fa-whatsapp"></i>
                          </a>
                       </li>
                       <li class="footer-nav-item">
-                         <a class="social-link linkedin" target="_blank" href="">
+                         <a class="social-link linkedin" target="_blank" href="{{@$g_settings->linkdin}}">
                          <i class="fab fa-linkedin-in"></i>
                          </a>
                       </li>
-
                       <li class="footer-nav-item">
-                         <a class="social-link youtube" target="_blank" href="">
+                         <a class="social-link youtube" target="_blank" href="{{@$g_settings->youtube}}">
                          <i class="fab fa-youtube"></i>
                          </a>
                       </li>

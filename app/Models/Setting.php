@@ -17,6 +17,7 @@ class Setting extends Model
         "linkdin",
         "instragram",
         "youtube",
+        "whatsapp",
         "address_one_title",
         "address_one_mobile_1",
         "address_one_mobile_2",

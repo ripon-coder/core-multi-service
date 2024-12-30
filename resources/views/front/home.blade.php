@@ -1,5 +1,5 @@
 @extends('front.inc.app')
-@section('container')
+@section('content')
     <div class="pt-90"></div>
     <section class="home-slider-section">
         <div class="home-main-slider-inner"><!-- owl-carousel -->

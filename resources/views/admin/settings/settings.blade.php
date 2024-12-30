@@ -86,6 +86,12 @@
                                             <input type="text" class="form-control" name="youtube" value="{{$setting->youtube}}">
                                         </div>
                                     </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-3 label-control">Whatsapp</label>
+                                        <div class="col-md-9 mx-auto">
+                                            <input type="text" class="form-control" name="whatsapp" value="{{$setting->whatsapp}}">
+                                        </div>
+                                    </div>
 
 
                                     <div class="form-group row">
@@ -95,12 +101,12 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group row">
+                                    {{-- <div class="form-group row">
                                         <label class="col-md-3 label-control">Office Hour</label>
                                         <div class="col-md-9 mx-auto">
                                             <textarea rows="5" class="form-control" name="office_hour">{{ $setting->office_hour }}</textarea>
                                         </div>
-                                    </div>
+                                    </div> --}}
 
                                     <div class="border pt-2 pr-1">
                                         <div class="mb-2">

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('linkdin')->nullable();
             $table->string('instragram')->nullable();
             $table->string('youtube')->nullable();
+            $table->string('whatsapp')->nullable();
 
             $table->string('address_one_title')->nullable();
             $table->string('address_one_mobile_1')->nullable();

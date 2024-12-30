@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JoinWithusController;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,7 @@ use App\Http\Controllers\JoinWithusController;
 // });
 
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/news-events', [HomeController::class, 'newsEvents'])->name('newsEvents');
 Route::get('/event/{url}', [HomeController::class, 'event'])->name('event');
 Route::get('/what-we-do', [HomeController::class, 'whatWeDo'])->name('whatWeDo');
@@ -32,6 +33,7 @@ Route::get('/who-we-are', [HomeController::class, 'whoWeAre'])->name('whoWeAre')
 Route::get('/team-member/{id}', [HomeController::class, 'teamMember'])->name('teamMember');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/contact', [ContactController::class, 'index'])->name('contact.save');
+Route::get('/review', [ReviewController::class, 'index'])->name('review');
 Route::get('/video-gallery', [HomeController::class, 'videoGallery']);
 Route::get('/photo-gallery', [HomeController::class, 'photoGallery']);
 Route::get('/blog', [HomeController::class, 'blog'])->name("blog");
