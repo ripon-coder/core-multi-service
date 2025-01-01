@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('histories', function (Blueprint $table) {
+        Schema::create('why_choose_us', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->longText('description')->nullable();
-            $table->string('button_text')->nullable();
-            $table->string('url')->nullable();
+            $table->string('name')->nullable();
+            $table->string('designation')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
         });
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('histories');
+        Schema::dropIfExists('why_choose_us');
     }
 };

@@ -84,7 +84,7 @@
       <nav class="navbar-main">
          <div class="logo-section">
             <a class="brand-logo" href="{{route('index')}}">
-            <img class="initial-logo" src="{{asset('assets/logo/logo-01.png')}}">
+            <img class="initial-logo" src="{{asset('dynamic-assets/logo/'.$g_settings->logo)}}">
             <img class="fixed-header-logo" src="{{asset('assets/logo/logo-02.png')}}">
             </a>
             <button class="navbar-menu-toggle-btn">
@@ -94,10 +94,10 @@
          <div class="nav-items-wrapper">
             <ul class="nav-item-inner-wrapper">
                <li class="nav-item-main">
-                  <a class="nav-item-link home active" href="/">Home</a>
+                  <a class="nav-item-link home @active('/')" href="{{route('index')}}">Home</a>
                </li>
                <li class="nav-item-main">
-                  <a class="nav-item-link cm-services" href="">Services</a> <!-- <span><i class="fas fa-chevron-down"></i></span> -->
+                  <a class="nav-item-link @if(Route::is('index')) cm-services @endif" href="{{route('index')}}?#cm-services">Services</a> <!-- <span><i class="fas fa-chevron-down"></i></span> -->
                   <!-- <ul class="nav-item-submenu">
                      <li class="nav-item-submenu-item">
                         <a class="nav-item-submenu-item-link" href="">Web Design</a>
@@ -105,10 +105,10 @@
                   </ul> -->
                </li>
                <li class="nav-item-main">
-                  <a class="nav-item-link" href="review.php">Review</a>
+                  <a class="nav-item-link @active('review')" href="{{route('review')}}">Review</a>
                </li>
                <li class="nav-item-main">
-                  <a class="nav-item-link" href="{{route('contact')}}">Contact</a>
+                  <a class="nav-item-link @active('contact')" href="{{route('contact')}}">Contact</a>
                </li>
             </ul>
          </div>

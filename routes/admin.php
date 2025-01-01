@@ -1,29 +1,31 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LearningController;
 use App\Http\Controllers\Admin\FaqController;
+use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\BrandController;
+use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\HistoryController;
+use App\Http\Controllers\Admin\JoiningController;
 use App\Http\Controllers\Admin\MissionController;
 use App\Http\Controllers\Admin\VissionController;
+use App\Http\Controllers\Admin\DonationController;
 use App\Http\Controllers\Admin\OverviewController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\ObjectiveController;
-use App\Http\Controllers\Admin\AdminProfileController;
-use App\Http\Controllers\Admin\AdmissionFormController;
-use App\Http\Controllers\Admin\BoardOfTrustController;
-use App\Http\Controllers\Admin\ContactController;
-use App\Http\Controllers\Admin\DonationController;
-use App\Http\Controllers\Admin\EventController;
-use App\Http\Controllers\Admin\FoundRaiseController;
 use App\Http\Controllers\Admin\HowWeWorkController;
-use App\Http\Controllers\Admin\JoiningController;
+use App\Http\Controllers\Admin\ObjectiveController;
+use App\Http\Controllers\Admin\FoundRaiseController;
+use App\Http\Controllers\Admin\WhyChooseUsController;
+use App\Http\Controllers\Admin\AdminProfileController;
+use App\Http\Controllers\Admin\BoardOfTrustController;
 use App\Http\Controllers\Admin\PhotoGalleryController;
-use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\VideoGalleryController;
-use App\Http\Controllers\LearningController;
+use App\Http\Controllers\Admin\AdmissionFormController;
+use App\Http\Controllers\Admin\PrivacyPolicyController;
 
 Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -82,6 +84,16 @@ Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function () 
     Route::controller(HowWeWorkController::class)->group(function () {
         Route::get('/how-we-work-admin', 'index')->name('howWork');
         Route::post('/how-we-work-admin', 'update')->name('howWork.update');
+    });
+
+    Route::controller(WhyChooseUsController::class)->group(function () {
+        Route::get('/why-choose-us', 'index')->name('whyChooseUs');
+        Route::post('/why-choose-us', 'update')->name('whyChooseUs.update');
+    });
+
+    Route::controller(PrivacyPolicyController::class)->group(function () {
+        Route::get('/privacy-policy', 'index')->name('privacyPolicy');
+        Route::post('/privacy-policy', 'update')->name('privacyPolicy.update');
     });
 
 });

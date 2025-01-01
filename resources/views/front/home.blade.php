@@ -3,21 +3,22 @@
     <div class="pt-90"></div>
     <section class="home-slider-section">
         <div class="home-main-slider-inner"><!-- owl-carousel -->
-            <div class="item">
-                <img src="{{asset('assets/image/Slider-2.jpg')}}" alt="images not found">
-                <div class="cover">
-                    <div class="container">
-                        <div class="header-content">
-                            <h1>CORE Credit Repair</h2>
-                                <h2>Repair Your credit and <br>Start Building Your Future.
-                            </h1>
-                            <h4>Let us Repair your Credit before your next purchase.</h4>
-                            <h4 class="call-us"><b>Call Us: 646-775-7008</b></h4>
-                            <a href="contact.php"> Get Started </a>
+            @foreach ($sliders as $item)
+                <div class="item">
+                    <img src="{{ asset('dynamic-assets/slider/' . $item->image) }}" alt="images not found">
+                    <div class="cover">
+                        <div class="container">
+                            <div class="header-content">
+                                <h1>{{$item->title}}</h1>
+                                <h2>{{$item->description}}</h2>
+                                <h4>{{$item->second_description}}</h4>
+                                {{-- <h4 class="call-us"><b>Call Us: 646-775-7008</b></h4> --}}
+                                <a href="{{$item->button_url}}"> Get Started </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
 
         </div>
     </section>
@@ -38,7 +39,7 @@
                             </div>
                             <div class="col-sm-5 col-lg-5 mortgage-wrap-right">
                                 <div class="mortgage-btn float-right">
-                                    <a href="contact.php">Contact Us</a>
+                                    <a href="{{route('contact')}}">Contact Us</a>
                                 </div>
                             </div>
                         </div>
@@ -89,7 +90,7 @@
                         <h4>Process</h4>
                         <p>Traditional credit repair just doesn't work like it used to, not even close. What we do is
                             completely different, more dependable, predictable, ethical and extremely fast.</p>
-                        <a class="process-contact" href="contact.php">Contact Us</a>
+                        <a class="process-contact" href="{{route('contact')}}">Contact Us</a>
                     </div>
                 </div>
 
@@ -149,18 +150,16 @@
                         <h2>Who we are</h2>
                         <div class="row">
                             <div class="col-sm-12 col-md-12 col-lg-8 m-auto">
-                                <h5>Individual & Business Solutions Jackson Heights, New York</h5>
+                                <h5>{{@$who_we_Are->title}}</h5>
                             </div>
                         </div>
-                        <p>We do not dispute the validity of any account. It doesn't matter if you were truly late, or the
-                            account is valid. We challenge the compliance of Metro2 reporting to get items removed from your
-                            credit report. Our credit repair methods are far and beyond anything any other creditrepair
-                            company is doing.</p><a href="contact.php">Contact Us</a>
+                        <p>{{@$who_we_Are->description}}</p>
+                        <a href="{{@$who_we_Are->url}}">{{@$who_we_Are->button_text}}</a>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="we-care-img text-center">
-                        <img src="assets/image/we-care.png" alt="">
+                        <img src="{{asset('dynamic-assets/history/'.@$who_we_Are->image)}}" alt="">
                     </div>
                 </div>
             </div>
@@ -191,7 +190,7 @@
                                 the optimal FICO score benefit as well as rebuild your credit.</p>
                         </div>
 
-                        <a href="contact.php"> Contact Us</a>
+                        <a href="{{route('contact')}}"> Contact Us</a>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-12">
@@ -199,30 +198,20 @@
                         <h2>Why Choose Us</h2>
                         <div class="row">
                             <div class="col-sm-7 m-auto">
-                                <h5>We are best</h5>
+                                <h5>{{@$why_choose_us->title}}</h5>
                             </div>
                         </div>
-                        <p style="text-align: justify;">We do not dispute the validity of any account. It doesn’t matter if
-                            you were truly late, or the account is valid. We challenge the compliance of Metro2 reporting to
-                            get items removed from your credit report.Our credit repair methods are far and beyond anything
-                            any other credit repair company is doing. In fact, less than 5% of the country’s repair firms do
-                            what we do. This is why we get faster, dependable, reliable and ethical results that you
-                            need.Our Mission is to educate and equip any consumer and/or our clients with the information
-                            and knowledge they need to make responsible decisions for the betterment of their financial
-                            health.
-
-                        <blockquote>I am always amazed at the false marketing done by other credit repair companies, at the
-                            very least unethical. I am extremely proud of the many successes our company has had for it’s
-                            clients.</blockquote>
-                        </p>
-
+                        <div class="why_choose_us">
+                            {!! @$why_choose_us->description !!}
+                        </div>
+                        
                         <div class="quoter">
                             <div class="img-holder">
-                                <img src="assets/image/cms-ceo.jpg" alt="">
+                                <img src="{{asset('dynamic-assets/why-choose-us/'.$why_choose_us->image)}}" alt="">
                             </div>
                             <div class="details">
-                                <h6>Mohammad Kashem</h5>
-                                    <p>Founder of the company</p>
+                                <h6>{{@$why_choose_us->name}}</h5>
+                                    <p>{{@$why_choose_us->designation}}</p>
                             </div>
                         </div>
 
@@ -241,7 +230,7 @@
             <div class="row">
                 <div class="col-sm-6 pr-0">
                     <div class="mission-img">
-                        <img src="assets/image/mission-image.png" width="100%">
+                        <img src="{{asset('assets/image/mission-image.png')}}" width="100%">
                     </div>
                 </div>
 

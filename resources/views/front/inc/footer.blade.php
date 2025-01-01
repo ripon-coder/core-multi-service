@@ -7,7 +7,7 @@
                 <div class="footer-nav-item-wrapper">
                    <div class="footer-logo-box">
                       <a class="link" href="#who-we-are">
-                         <img src="assets/logo/fotoer-site-logo.png">
+                         <img src="{{asset('assets/logo/fotoer-site-logo.png')}}">
                       </a>
                       <a class="company" href="javascript:;">
                          <h2 class="title">CORE MULTI SERVICES INC.</h2>
@@ -44,21 +44,21 @@
                    </div>
                    <ul class="footer-nav-item-inner d-none d-md-block">
                       <li class="footer-nav-item">
-                         <a class="link" href="#who-we-are">About</a>
+                         <a class="link" href="{{route("index")}}?#who-we-are">About</a>
                       </li>
 
                       <li class="footer-nav-item">
-                         <a class="link cm-services" href="">Process</a>
+                         <a class="link" href="#">Process</a>
                       </li>
                        <li class="footer-nav-item">
-                         <a class="link" href="review.php">Review</a>
+                         <a class="link" href="{{route('review')}}">Review</a>
                       </li>
                       <li class="footer-nav-item">
-                         <a class="link cm-services" href="">Service</a>
+                         <a class="link" href="{{route('index')}}?#cm-services">Service</a>
                       </li>
                       
                       <li class="footer-nav-item">
-                         <a class="link" href="contact.php">Contact</a>
+                         <a class="link" href="{{route('contact')}}">Contact</a>
                       </li>
                    </ul>
                    
@@ -149,7 +149,7 @@
                       <a class="link" href="">Sitemap</a>
                    </li>
                    <li class="item">
-                      <a class="link" href="terms-of-use.php">Privacy Policy</a>
+                      <a class="link" href="{{route('privacyPolicy')}}">Privacy Policy</a>
                    </li>
                 </ul>
              </div>

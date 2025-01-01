@@ -2,35 +2,47 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CommentRequest;
-use App\Models\AdmissionForm;
-use App\Models\BoardTrust;
-use App\Models\Brand;
-use App\Models\Comment;
-use App\Models\Faq;
-use App\Models\FoundRaise;
-use App\Models\History;
-use App\Models\HowWeWork;
-use App\Models\Mission;
-use App\Models\Objective;
-use App\Models\Overview;
-use App\Models\Post;
-use App\Models\Slider;
-use App\Models\Vission;
 use Carbon\Carbon;
+use App\Models\Faq;
+use App\Models\Post;
+use App\Models\Brand;
 use App\Models\Event;
-use App\Models\Learning;
-use App\Models\PhotoGallery;
+use App\Models\Slider;
+use App\Models\Comment;
+use App\Models\History;
+use App\Models\Mission;
 use App\Models\Setting;
+use App\Models\Vission;
+use App\Models\Learning;
+use App\Models\Overview;
+use App\Models\HowWeWork;
+use App\Models\Objective;
+use App\Models\BoardTrust;
+use App\Models\FoundRaise;
+use App\Models\WhyChooseUs;
+use App\Models\PhotoGallery;
 use App\Models\VideoGallery;
 use Illuminate\Http\Request;
+use App\Models\AdmissionForm;
+use App\Http\Requests\CommentRequest;
+use App\Models\PrivacyPolicy;
 
 class HomeController extends Controller
 {
 	public function index()
 	{
-		return view('front.home');
+		$data['sliders'] = Slider::where('status','published')->get();
+		$data['who_we_Are'] = History::first();
+		$data['why_choose_us'] = WhyChooseUs::first();
+		return view('front.home',$data);
 	}
+
+	public function privacyPolicy(){
+		$data['page_name'] = "Privacy-Policy";
+		$data['privacy_policy'] = PrivacyPolicy::first();
+		return view('front.pages.privacy-policy',$data);
+	}
+
 	public function newsEvents()
 	{
 		$data['page_name'] = "News & Events";

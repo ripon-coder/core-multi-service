@@ -17,7 +17,11 @@ class HistoryController extends Controller
     public function update(Request $request){
         $history = History::first();
         $history->fill($request->all());
+        if ($request->file('file')) {
+            $history->image = FileUpload::path("dynamic-assets/history")->removeFile($history->image ?? '')->uploadFile($request->file);
+        }
         $history->save();
         return redirect()->back()->with('success', 'Saved!');
+
     }
 }

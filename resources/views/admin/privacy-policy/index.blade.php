@@ -1,7 +1,7 @@
 @extends('admin.app.app')
 
 @section('title')
-    Who we are
+    Privacy-Policy
 @endsection
 @section('vendorCss')
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/app-assets/vendors/css/editors/summernote.css') }}">
@@ -10,7 +10,7 @@
 @endsection
 
 @section('pageHeading')
-    @include('admin.app.page-heading', ['text'=>'Dashboard / Who we are'] )
+    @include('admin.app.page-heading', ['text'=>'Dashboard / Privacy-Policy'] )
 @endsection
 
 @section('content')
@@ -19,12 +19,12 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" id="horz-layout-basic">Who we are</h4>
+                    <h4 class="card-title" id="horz-layout-basic">Privacy-Policy</h4>
                 </div>
                 <div class="card-content collpase show">
                     <div class="card-body">
                         <div class="card-text"></div>
-                        <form class="form form-horizontal" id="profileForm" method="post" action="{{ route('admin.history.update') }}" enctype="multipart/form-data">
+                        <form class="form form-horizontal" id="profileForm" method="post" action="{{ route('admin.privacyPolicy.update') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-body">
                                 @if(session()->has('error') || $errors->has('file'))
@@ -40,31 +40,13 @@
                                 <div class="form-group row">
                                     <label class="col-md-3 label-control">Title</label>
                                     <div class="col-md-9 mx-auto">
-                                        <input required type="text" value="{{ @$history->title }}" class="form-control" name="title">
+                                        <input required type="text" value="{{ @$privay_policy->title }}" class="form-control" name="title">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-3 label-control">Description</label>
                                     <div class="col-md-9 mx-auto">
-                                        <textarea class="form-control" name="description">{!!@$history->description!!}</textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 label-control">Button TExt</label>
-                                    <div class="col-md-9 mx-auto">
-                                        <input type="text" value="{{ @$history->button_text }}" class="form-control" name="button_text">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 label-control">Button URL</label>
-                                    <div class="col-md-9 mx-auto">
-                                        <input type="url" value="{{ @$history->url }}" class="form-control" name="url">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 label-control">Image</label>
-                                    <div class="col-md-9 mx-auto">
-                                        <input type="file" class="form-control"  name="file" accept="image/*">
+                                        <textarea class="form-control summernote" name="description">{!!@$privay_policy->description!!}</textarea>
                                     </div>
                                 </div>
 

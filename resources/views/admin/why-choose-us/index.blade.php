@@ -1,7 +1,7 @@
 @extends('admin.app.app')
 
 @section('title')
-    Who we are
+    Why Choose Us
 @endsection
 @section('vendorCss')
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/app-assets/vendors/css/editors/summernote.css') }}">
@@ -10,7 +10,7 @@
 @endsection
 
 @section('pageHeading')
-    @include('admin.app.page-heading', ['text'=>'Dashboard / Who we are'] )
+    @include('admin.app.page-heading', ['text'=>'Dashboard / Why Choose Us'] )
 @endsection
 
 @section('content')
@@ -19,12 +19,12 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" id="horz-layout-basic">Who we are</h4>
+                    <h4 class="card-title" id="horz-layout-basic">Why Choose Us</h4>
                 </div>
                 <div class="card-content collpase show">
                     <div class="card-body">
                         <div class="card-text"></div>
-                        <form class="form form-horizontal" id="profileForm" method="post" action="{{ route('admin.history.update') }}" enctype="multipart/form-data">
+                        <form class="form form-horizontal" id="profileForm" method="post" action="{{ route('admin.whyChooseUs.update') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-body">
                                 @if(session()->has('error') || $errors->has('file'))
@@ -40,25 +40,25 @@
                                 <div class="form-group row">
                                     <label class="col-md-3 label-control">Title</label>
                                     <div class="col-md-9 mx-auto">
-                                        <input required type="text" value="{{ @$history->title }}" class="form-control" name="title">
+                                        <input required type="text" value="{{ @$why_choose_us->title }}" class="form-control" name="title">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-3 label-control">Description</label>
                                     <div class="col-md-9 mx-auto">
-                                        <textarea class="form-control" name="description">{!!@$history->description!!}</textarea>
+                                        <textarea class="form-control summernote" name="description">{!!@$why_choose_us->description!!}</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-md-3 label-control">Button TExt</label>
+                                    <label class="col-md-3 label-control">Name</label>
                                     <div class="col-md-9 mx-auto">
-                                        <input type="text" value="{{ @$history->button_text }}" class="form-control" name="button_text">
+                                        <input type="text" value="{{ @$why_choose_us->name }}" class="form-control" name="name">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-md-3 label-control">Button URL</label>
+                                    <label class="col-md-3 label-control">Designation</label>
                                     <div class="col-md-9 mx-auto">
-                                        <input type="url" value="{{ @$history->url }}" class="form-control" name="url">
+                                        <input type="text" value="{{ @$why_choose_us->designation }}" class="form-control" name="designation">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -67,7 +67,6 @@
                                         <input type="file" class="form-control"  name="file" accept="image/*">
                                     </div>
                                 </div>
-
                             </div>
 
                             <div class="form-actions">
