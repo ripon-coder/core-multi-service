@@ -32,6 +32,7 @@ Route::get('/causes-list', [HomeController::class, 'causesList'])->name('causesL
 Route::get('/who-we-are', [HomeController::class, 'whoWeAre'])->name('whoWeAre');
 Route::get('/team-member/{id}', [HomeController::class, 'teamMember'])->name('teamMember');
 Route::get('/review', [ReviewController::class, 'index'])->name('review');
+Route::post('/review', [ReviewController::class, 'save'])->name('review.save');
 
 
 // Route::get('/video-gallery', [HomeController::class, 'videoGallery']);

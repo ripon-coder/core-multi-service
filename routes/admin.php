@@ -26,6 +26,7 @@ use App\Http\Controllers\Admin\PhotoGalleryController;
 use App\Http\Controllers\Admin\VideoGalleryController;
 use App\Http\Controllers\Admin\AdmissionFormController;
 use App\Http\Controllers\Admin\PrivacyPolicyController;
+use App\Http\Controllers\Admin\ReviewController;
 
 Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -94,6 +95,16 @@ Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function () 
     Route::controller(PrivacyPolicyController::class)->group(function () {
         Route::get('/privacy-policy', 'index')->name('privacyPolicy');
         Route::post('/privacy-policy', 'update')->name('privacyPolicy.update');
+    });
+
+    Route::controller(ReviewController::class)->group(function () {
+        Route::get('/pending-review', 'pendingReview')->name('pending.review');
+        Route::get('/approved-review', 'approvedReview')->name('approve.review');
+        Route::get('/cancel-review', 'cancelReview')->name('cancel.review');
+
+        Route::post('/approved-review/{id}', 'approvedReviewSave')->name('approvedReviewSave');
+        Route::post('/pending-review/{id}', 'pendingReviewSave')->name('pendingReviewSave');
+        Route::post('/cancel-review/{id}', 'cancelReviewSave')->name('cancelReviewSave');
     });
 
 });

@@ -108,6 +108,26 @@
             </li> --}}
 
             <li class="nav-item ">
+                <a href="#"><i class="la la-star-half-o"></i><span class="menu-title" data-i18n="Starter kit">Review</span></a>
+                <ul class="menu-content">
+                    <li class="nav-item @active('admin/pending-review*')">
+                        <a href="{{ route('admin.pending.review') }}"><i class="la la-arrow-right"></i><span class="menu-title"
+                                data-i18n="Starter kit">Pending Review</span></a>
+                    </li>
+                    <li class="nav-item @active('admin/cancel-review*')">
+                        <a href="{{ route('admin.cancel.review') }}"><i class="la la-arrow-right"></i><span class="menu-title"
+                                data-i18n="Starter kit">Cancel Review</span></a>
+                    </li>
+
+                    <li class="nav-item @active('admin/approved-review*')">
+                        <a href="{{ route('admin.approve.review') }}"><i class="la la-arrow-right"></i><span class="menu-title"
+                                data-i18n="Starter kit">Approve Review</span></a>
+                    </li>
+                    
+                </ul>
+            </li>
+
+            <li class="nav-item ">
                 <a href="#"><i class="la la-sticky-note"></i><span class="menu-title" data-i18n="Starter kit">Pages</span></a>
                 <ul class="menu-content">
                     <li class="nav-item @active('admin/why-choose-us*')">

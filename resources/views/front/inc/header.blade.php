@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>@yield('title', 'Core Multiservice Inc.')</title>
-<link rel="icon" href="" type="image/png" sizes="32x32">
+<link rel="icon" href="{{asset('dynamic-assets/fevicon/'.@$g_settings->fevicon)}}" type="image/x-icon" sizes="32x32">
 <meta charset="UTF-8">
 <meta name="Theme Design" content="Theme Design">
 <meta name="Theme Design" content="Theme Design">

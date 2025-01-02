@@ -16,18 +16,12 @@
 @section('content')
 
     <h3>Dashboard</h3>
-    {{-- <div class="row">
-        <div class="col-12">
-            <div class="card style-datatable">
-                <div class="card-header">
-                    <h4 class="card-title"><i class="la la-server"></i> Products</h4>
-                </div>
-                <div class="card-content">
-                    <div class="card-body">
-
-                    </div>
-                </div>
+    <div class="row">
+        <div class="col-12 mt-2">
+            <div class="card text-center d-flex justify-content-center align-items-center">
+                <img src="{{ asset('dynamic-assets/logo/' . @$g_settings->logo) }}" width="50%" height="50%">
             </div>
         </div>
-    </div> --}}
+        
+    </div>
 @endsection

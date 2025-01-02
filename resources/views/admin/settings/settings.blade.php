@@ -113,12 +113,12 @@
                                             <h4 class="text-center">Address</h4>
                                         </div>
 
-                                        <div class="form-group row">
+                                        {{-- <div class="form-group row">
                                             <label class="col-md-3 label-control">Title</label>
                                             <div class="col-md-9 mx-auto">
                                                 <input type="text" class="form-control" name="address_one_title" value="{{$setting->address_one_title}}">
                                             </div>
-                                        </div>
+                                        </div> --}}
 
                                         <div class="form-group row">
                                             <label class="col-md-3 label-control">Cell Number</label>
@@ -134,12 +134,12 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group row">
+                                        {{-- <div class="form-group row">
                                             <label class="col-md-3 label-control">Email</label>
                                             <div class="col-md-9 mx-auto">
                                                 <input type="text" class="form-control" name="address_one_email" value="{{$setting->address_one_email}}">
                                             </div>
-                                        </div>
+                                        </div> --}}
 
                                         <div class="form-group row">
                                             <label class="col-md-3 label-control">Address</label>
