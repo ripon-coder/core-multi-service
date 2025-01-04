@@ -134,8 +134,8 @@
                    <img src="assets/logo/logo-01.png" alt="YourCom">
                 </div>
                 <div class="full-name">
-                   Copyright © Core Multi Services Inc., 2020. Website Developed & Maintenance by
-                   <a target="_blank" class="footer_logo" href="https://bijoytech.com/"><img src="assets/logo/footer-logo.png" alt=""></a>
+                   Copyright © Core Multi Services Inc., {{Date('Y')}}. Website Developed & Maintenance by
+                   <a target="_blank" class="footer_logo" href="https://bijoytech.com/"><img src="{{asset('assets/logo/footer-logo.png')}}" alt=""></a>
                 </div>
              </div>
              <div class="col-sm-12 col-lg-3 col-md-12 p-0 right-box">
