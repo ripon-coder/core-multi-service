@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,16 +9,18 @@
     <title>@yield('title')</title>
 
 
-    @if ( isset($g_setting->favicon))
-        <link rel="apple-touch-icon" href="{{ asset('images/admin/site_setting/favicon/'.$g_setting->favicon)}}">
-        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/images/admin/site_setting/favicon/'.$g_setting->favicon)}}">
+    @if (isset($g_setting->favicon))
+        <link rel="icon" href="{{ asset('dynamic-assets/fevicon/' . @$g_settings->fevicon) }}" type="image/x-icon"
+            sizes="32x32">
     @else
-        <link rel="apple-touch-icon" href="{{ asset('admin/app-assets/images/ico/apple-icon-120.png') }}">
-        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('admin/app-assets/images/ico/favicon.ico') }}">
+        <link rel="icon" href="{{ asset('dynamic-assets/fevicon/' . @$g_settings->fevicon) }}" type="image/x-icon"
+            sizes="32x32">
     @endif
 
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CQuicksand:300,400,500,700" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CQuicksand:300,400,500,700"
+        rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/app-assets/vendors/css/vendors.min.css') }}">
@@ -30,16 +33,20 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/app-assets/css/bootstrap-extended.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/app-assets/css/colors.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/app-assets/css/components.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('admin/app-assets/vendors/css/forms/toggle/bootstrap-switch.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('admin/app-assets/vendors/css/forms/toggle/switchery.min.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('admin/app-assets/vendors/css/forms/toggle/bootstrap-switch.min.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('admin/app-assets/vendors/css/forms/toggle/switchery.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/app-assets/css/plugins/forms/switch.css') }}">
     <!-- END: Theme CSS-->
 
     <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('admin/app-assets/css/core/menu/menu-types/vertical-menu.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('admin/app-assets/css/core/menu/menu-types/vertical-menu.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/app-assets/css/plugins/extensions/toastr.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/app-assets/css/core/colors/palette-tooltip.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('admin/app-assets/vendors/css/tables/datatable/datatables.min.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('admin/app-assets/vendors/css/tables/datatable/datatables.min.css') }}">
     <!-- Select 2-->
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/app-assets/vendors/css/select-2/select2.min.css') }}">
 
@@ -62,7 +69,8 @@
 
 <!-- BEGIN: Body-->
 
-<body class="vertical-layout vertical-menu 2-columns  footer-fixed fixed-navbar" data-open="click" data-menu="vertical-menu" data-col="2-columns">
+<body class="vertical-layout vertical-menu 2-columns  footer-fixed fixed-navbar" data-open="click"
+    data-menu="vertical-menu" data-col="2-columns">
 
     <!-- BEGIN: Header-->
     @include('admin.app.header')
@@ -127,8 +135,10 @@
     <script src="{{ asset('admin/app-assets/bijoytechJs/ajax.js') }}"></script>
     <script src="{{ asset('admin/app-assets/bijoytechJs/admin.js') }}"></script>
 
-<!-- Validator: Frontend-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Validator: Frontend-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"
+        integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </body>
 <!-- END: Body-->
